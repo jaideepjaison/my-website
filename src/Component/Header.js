@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundImage: 'linear-gradient(to right, #2E3192, #29bbbb)' }}>
         <div className="container">
-          <Link className="navbar-brand" style={{ fontWeight: 'bold',fontSize:'26px' }} to="">JaisonLoboTest</Link>
+          <Link className="navbar-brand" style={{ fontWeight: 'bold',fontSize:'26px' }} to="">JaisonLobo</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
