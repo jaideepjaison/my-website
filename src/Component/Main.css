@@ -1,0 +1,102 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .portfolio {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('SDE_BG2.jpg');
+    background-size: cover;
+    filter: brightness(0.5); /* Adjust the brightness of the background image */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    animation: zoomInOut 10s infinite alternate ease-in-out;
+    
+  }
+  
+  .content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    bottom: 35%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+  }
+  
+  .profile-photo {
+    width: 200px; /* Adjust the size of the profile photo */
+    border-radius: 50%; /* Make the profile photo circular */
+    transition: transform 0.3s ease;
+   
+  }
+  .profile-photo:hover {
+    transform: scale(1.1);
+  }
+  .name {
+    font-size: 30px;
+    animation: typing 4s steps(30) infinite;
+    filter: brightness(5); 
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    
+  }
+  
+  .description {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-style: italic;
+    
+  }
+  
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1); /* Initial scale */
+    }
+    50% {
+      transform: scale(1.1); /* Zoom in to 110% */
+    }
+    100% {
+      transform: scale(1); /* Return to original scale */
+    }
+}
+
+.desig{
+    font-size: 23px;
+    width: auto;
+    text-align: center;
+    white-space: nowrap;
+    margin: 20px 0;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 0;
+    animation: blink 4s;
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+
+ 

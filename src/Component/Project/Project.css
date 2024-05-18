@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+  }
+  
+  .project {
+    flex: 1 1 300px;
+    /*background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #a18cd1, #fbc2eb, #fad0c4, #ffd1ff); /* Gradient colors */
+    background:linear-gradient(to right, #2E3192, #29bbbb);
+    background-size: 400% 400%;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    animation: sidemove 5s linear infinite;
+    transition: transform 0.3s ease;
+  }
+  
+  .project h2 {
+    margin-top: 0;
+
+  }
+  
+  .project a {
+    display: block;
+    margin-bottom: 10px;
+   
+  }
+   .project:hover{
+    transform: scale(1.1);
+   }
+  .project img {
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    
+  }
+  
+  .rewards {
+    margin-top: 50px;
+  }
+  
+  .reward-images {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .reward-images img {
+    width: 200px;
+    border-radius: 5px;
+  }
+  .titleProject{
+    text-align: center;
+    color: white;
+    margin: 0px;
+    padding: 4px;
+  }
+  
+
+
+
+a{
+  font-size: 20px;
+}
+
+h3,a{
+  color: white;
+}

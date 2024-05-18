@@ -1,0 +1,54 @@
+.technology-skills {
+    text-align: center;
+  }
+  
+  .technology-skills h2 {
+    margin-bottom: 20px;
+  }
+  
+  .technology-skills ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .technology-skills li {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+  /* Apply zoom-in effect on hover */
+  .technology-skills li:hover {
+    transform: scale(1.1); /* Zoom in on hover */
+  }
+  
+  /* Beautiful CSS animation in the background */
+  /* body {
+    overflow: hidden;
+  } */
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .body-color {
+    animation: gradientAnimation 10s infinite;
+    background: linear-gradient(to right, #ff5f6d, #ffc371);
+    background-size: 200% 200%;
+  }
+  h1{
+    text-align: center;
+  }
