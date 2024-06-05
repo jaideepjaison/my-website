@@ -5,7 +5,7 @@ const Conatct = () => {
         <>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <header className='header-conatct'>
-      <h1>Developer Conatct</h1>
+      <h1>Developer Conatctt</h1>
     </header>
         <div style={{height: '60vh',placeContent:'center'}}>
     <main className='.main-conatct'>
