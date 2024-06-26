@@ -23,7 +23,7 @@ const Project = () => {
 
       <div className="project">
         <h3>Project 3 - Dec 2021 - June 2022</h3>
-        <a href="https://swa-erp.in">AIET College ERP</a>
+        <a href="https://saw-erp.in">AIET College ERP</a>
         <img className='a-link' src={aiet} alt="Project  Image" />
       </div>
 

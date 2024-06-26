@@ -23,8 +23,8 @@ const Footer = () => {
     <Link to="/"><img style={{borderRadius:'50%'}} src={jllogo} className="spotify-logo"/></Link>
     </div>
     <div className="social-links">
-      <a href="#"><i className="fab fa-instagram"></i></a>
-      <a href="#"><i className="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/jaisonjaideeplobo?igsh=OWVsOHN3emxjY202" target='_blank'><i className="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/jaison.lobo.718?mibextid=kFxxJD" target='_blank'><i className="fab fa-facebook-f"></i></a>
       <a href="https://www.youtube.com/@codewithjaison367" target='_blank'><i className="fab fa-youtube"></i></a>
       <a href="https://www.linkedin.com/in/jaison-jaideep-lobo/" target='_blank'><i className="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/jaideepjaison" target='_blank'><i className="fab fa-github"></i></a> 

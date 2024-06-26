@@ -14,12 +14,14 @@ const Skils = () => {
         <li>Springboot</li>
         <li>JavaScript</li>
         <li>TypeScript</li>
+        <li>Microservices</li>
         <li>React.js</li>
         <li>SQL</li>
         <li>Hibernate</li>
         <li>Git & GitHub</li>
         <li>PHP</li>
-        <li>DOcker</li>
+        <li>Docker</li>
+        <li>Kafka</li>
       </ul>
     </section>
   </main>

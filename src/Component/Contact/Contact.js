@@ -14,7 +14,7 @@ const Conatct = () => {
         <img src="../PhotoJL.png" alt="Profile Photo" class="profile-photo" />
         <h5>If any freelacing project or any other thingsthere please connect with me here 👇</h5>
         <div className="social-links-conatct">
-        <a href="#"><i className="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/jaisonjaideeplobo?igsh=OWVsOHN3emxjY202" target='_blank'><i className="fab fa-instagram"></i></a>
       <a href="https://www.linkedin.com/in/jaison-jaideep-lobo/" target='_blank'><i className="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/jaideepjaison" target='_blank'><i className="fab fa-github"></i></a> 
   </div>
