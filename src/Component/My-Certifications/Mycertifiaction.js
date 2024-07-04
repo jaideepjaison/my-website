@@ -28,6 +28,11 @@ const MyCertifications = () => {
       name: 'JavaScript',
       image: 'images/certification2.jpg',
       link: 'https://www.hackerrank.com/certificates/efc26681cfb3'
+    },
+    {
+      name: 'Git Tutorials',
+      image: 'images/certification2.jpg',
+      link: 'https://verify.mygreatlearning.com/verify/QPLPMHXT'
     }
   ];
 
@@ -51,7 +56,7 @@ const MyCertifications = () => {
                   <td>{cert.name}</td>
                   <td>
                     <a className='btn btn-success' href={cert.link} target="_blank" rel="noopener noreferrer">
-                      View Certification
+                      View Certificate
                     </a>
                   </td>
                 </tr>
