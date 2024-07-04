@@ -1,5 +1,5 @@
 import './certificcate.css';
-import angularimage from './angular.png';
+
 
 
 const MyCertifications = () => {
@@ -16,7 +16,7 @@ const MyCertifications = () => {
     },
     {
       name: 'Angular',
-      image: {angularimage},
+      image: '',
       link: 'https://www.hackerrank.com/certificates/f380050930eb'
     },
     {
