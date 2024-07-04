@@ -4,7 +4,7 @@ const Skils = () => {
         <>
         <body className='body-color'>
         <header>
-    <h1>My Technology Skills</h1>
+    <h1 className='my-skill-heading'>My Technology Skills</h1>
   </header>
   <main>
     <section className="technology-skills">
