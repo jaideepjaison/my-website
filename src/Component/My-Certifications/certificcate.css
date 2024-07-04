@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('') no-repeat center center fixed; 
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.container-new {
+    max-width: 800px;
+    margin: auto;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.certification-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.certification-table th, .certification-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.certification-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.certification-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.certification-table tr:hover {
+    background-color: #ddd;
+}
+
+.certification-table img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+/* .certification-table a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+
+} */
+
+/* .certification-table a:hover {
+    text-decoration: underline;
+} */
+.scrollable-container {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }

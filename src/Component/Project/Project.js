@@ -1,7 +1,7 @@
 import './Project.css';
 import ND from './ND_image.png';
 import st_roque from './st_logo.png';
-import aiet from './Aiet-College.jpg'
+import aiet from './Aiet-College.jpg';
 const Project = () => {
     return ( 
         <>

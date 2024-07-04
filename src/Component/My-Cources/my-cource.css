@@ -1,0 +1,74 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin: 16px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(177, 16, 16, 0.1);
+    overflow: hidden;
+    width: 300px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-content {
+    padding: 16px;
+  }
+  
+  .card-title {
+    font-size: 1.25em;
+    margin-bottom: 8px;
+  }
+  
+  .card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .card-button:hover {
+    background-color: #0056b3;
+  }
+  .my-cource{
+    color: white;
+  }
+
+  .span-test{
+    justify-content: center;
+    color: yellow;
+    background-color: red;
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Relative positioning for the text */
+    height: 30px; 
+    width: 100%;
+  }
+
+  .slide {
+    display: inline-block;
+    position: absolute; /* Absolute positioning for sliding effect */
+    white-space: nowrap; /* Prevent text wrapping */
+    animation: slide-right 5s linear infinite; /* Animation properties */
+}
+
+  @keyframes slide-right {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+    }
+    100% {
+        transform: translateX(200%); /* Move off-screen to the right */
+    }
+}

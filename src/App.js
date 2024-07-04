@@ -7,6 +7,7 @@ import Header from './Component/Header';
 import Footer from './Component/Footer';
 import Project from './Component/Project/Project';
 import Conatct from './Component/Contact/Contact';
+import My_cources from './Component/My-Cources/my_cource';
 function App() {
   // const router=createBrowserRouter([
   //   {
@@ -29,6 +30,7 @@ function App() {
       <Route path='' element={<Home/>} />
       <Route path='/projects' element={<Project/>} />
       <Route path='/contact' element={<Conatct/>} />
+      <Route path='/my_cources' element={<My_cources/>} />
      </Routes>
      <Footer/>
      </BrowserRouter>
