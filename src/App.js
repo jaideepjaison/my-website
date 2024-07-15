@@ -8,20 +8,8 @@ import Footer from './Component/Footer';
 import Project from './Component/Project/Project';
 import Conatct from './Component/Contact/Contact';
 import My_cources from './Component/My-Cources/my_cource';
+import MyResume from './Component/My-Resume/my-resume';
 function App() {
-  // const router=createBrowserRouter([
-  //   {
-  //     path:"/projects",
-  //     element:<Project/>
-  //   }
-  // ])
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <div>Hello world!</div>,
-  //   },
-  // ]);
-  
   return (
     <>
      <BrowserRouter>
@@ -31,6 +19,7 @@ function App() {
       <Route path='/projects' element={<Project/>} />
       <Route path='/contact' element={<Conatct/>} />
       <Route path='/my_cources' element={<My_cources/>} />
+      <Route path='/my_resume' element={<MyResume/>} />
      </Routes>
      <Footer/>
      </BrowserRouter>
