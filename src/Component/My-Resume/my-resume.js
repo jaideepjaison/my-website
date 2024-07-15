@@ -6,13 +6,13 @@ const MyResume = () => {
             <div class="container-resume">
         <header>
             <h2>Jaison Jaideep Lobo</h2>
-            <p>Web Developer</p>
+            <p>Full Stack Developer</p>
         </header>
 
         <section class="about">
             <h2>About Me</h2>
             <p>
-                I am a passionate web developer with experience in creating dynamic and responsive web applications.
+                I am a passionate Full Stack developer with experience in creating dynamic and responsive web applications.
                 I specialize in front-end development with skills in Java, Spring boot, Angular, MySql, JavaScript, and various frameworks.
             </p>
         </section>
