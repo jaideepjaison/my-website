@@ -20,6 +20,7 @@
     color: #fff;
     cursor: pointer;
     transition: transform 0.3s ease; /* Add transition for smooth animation */
+    outline: 1px solid #fff;
   }
   
   /* Apply zoom-in effect on hover */
@@ -46,7 +47,7 @@
   
   .body-color {
     animation: gradientAnimation 10s infinite;
-    background: linear-gradient(to right, #ff5f6d, #ffc371);
+    background: linear-gradient(to left, #b100f7, #ff0015);
     background-size: 200% 200%;
   }
   h1{
