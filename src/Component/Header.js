@@ -21,28 +21,28 @@ const Header = () => {
     }, [location]);
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundImage: 'linear-gradient(to left, #2E3192, #29bbbb, #00FF00)' }}        >
+        <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundImage: 'linear-gradient(to right, #2E3192, #29bbbb)' }}>
             <div className="container">
-                <Link className="navbar-brand" style={{ fontWeight: '10px', fontSize: '26px', color :'black' }} to="/">JaisonLobo</Link>
+                <Link className="navbar-brand" style={{ fontWeight: 'bold', fontSize: '30px' }} to="/">𝓙𝓛</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link"  style={{ fontWeight: '10px',fontSize: '21px',color :'black' }} to="/" onClick={handleNavItemClick}>Home</Link>
+                            <Link className="nav-link" to="/" onClick={handleNavItemClick}>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" style={{ fontWeight: '10px',fontSize: '21px',color :'black' }} to="/projects" onClick={handleNavItemClick}>Projects</Link>
+                            <Link className="nav-link" to="/projects" onClick={handleNavItemClick}>Projects</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" style={{ fontWeight: '10px',fontSize: '21px',color :'black' }} to="/my_cources" onClick={handleNavItemClick}>My Courses</Link>
+                            <Link className="nav-link" to="/my_cources" onClick={handleNavItemClick}>My Courses</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" style={{ fontWeight: '10px',fontSize: '21px',color :'black' }} to="/my_resume" onClick={handleNavItemClick}>My Resume</Link>
+                            <Link className="nav-link" to="/my_resume" onClick={handleNavItemClick}>My Resume</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" style={{ fontWeight: '10px',fontSize: '21px',color :'black' }} to="/contact" onClick={handleNavItemClick}>Contact</Link>
+                            <Link className="nav-link" to="/contact" onClick={handleNavItemClick}>Contact</Link>
                         </li>
                     </ul>
                 </div>
