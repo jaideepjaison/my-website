@@ -12,8 +12,8 @@ const My_cources = () => {
     return ( 
         
         <>
-        <header>
-            <h1 className="my-cource">My Cources</h1>
+        <header> 
+            <h1 className="my-cource">My Courses</h1>
             </header>
             <div className="card-container">
       {certifications.map((cert, index) => (
@@ -27,7 +27,7 @@ const My_cources = () => {
       ))}
     </div>
     <div className='span-test'>
-    <p className='slide'>Will upload new cources soon.....</p>
+    <p className='slide'>Will upload new courses soon.....</p>
     </div>
             </>
      );
