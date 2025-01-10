@@ -7,7 +7,7 @@ const Conatct = () => {
     <header className='header-conatct'>
       <h1 className='dev_contact'>Developer Conatct</h1>
     </header>
-        <div style={{height: '60vh',placeContent:'center'}}>
+        <div  className="background_img" style={{height: '60vh',placeContent:'center'}}>
     <main className='.main-conatct'>
       <div class="background-image"></div>
       <div class="content-contact">
