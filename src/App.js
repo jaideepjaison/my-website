@@ -9,6 +9,7 @@ import Project from './Component/Project/Project';
 import Conatct from './Component/Contact/Contact';
 import My_cources from './Component/My-Cources/my_cource';
 import MyResume from './Component/My-Resume/my-resume';
+import PhoneNumbers from './Component/PhoneNumber/PhoneNumber';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
       <Route path='/contact' element={<Conatct/>} />
       <Route path='/my_cources' element={<My_cources/>} />
       <Route path='/my_resume' element={<MyResume/>} />
+      <Route path='/phoneNumber' element={<PhoneNumbers/>} />
      </Routes>
      <Footer/>
      </BrowserRouter>
