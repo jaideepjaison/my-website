@@ -21,7 +21,7 @@ function App() {
       <Route path='/contact' element={<Conatct/>} />
       <Route path='/my_cources' element={<My_cources/>} />
       <Route path='/my_resume' element={<MyResume/>} />
-      <Route path='/phoneNumber' element={<PhoneNumbers/>} />
+      <Route path='/phone' element={<PhoneNumbers/>} />
      </Routes>
      <Footer/>
      </BrowserRouter>
