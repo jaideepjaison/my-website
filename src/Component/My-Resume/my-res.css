@@ -1,62 +1,219 @@
-.container-resume {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
+:root{
+    --bg:#070710;
+    --card:#0f1722;
+    --glass: rgba(255,255,255,0.03);
+    --muted:#9aa4b2;
+    --accent1:#00e5ff;
+    --accent2:#7a00ff;
+    --accent3:#00ff9e;
 }
 
-.container-resume {
-    max-width: 800px;
+/* container: centered "card" with dark gaming look */
+.container-resume{
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #e6f7ff;
+    max-width: 900px;
     margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 28px;
+    position: relative;
+    border-radius: 14px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+        linear-gradient(135deg, rgba(10,12,20,0.8), rgba(6,8,16,0.85));
+    box-shadow:
+        0 20px 50px rgba(3,6,10,0.75),
+        0 0 40px rgba(122,0,255,0.06);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.03);
+    backdrop-filter: blur(6px) saturate(120%);
 }
 
-header {
+/* animated neon rim behind the card */
+.container-resume::before{
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: conic-gradient(from 200deg, var(--accent1), var(--accent2), var(--accent3), transparent);
+    filter: blur(22px) saturate(140%);
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateZ(0);
+    animation: neon-rotate 9s linear infinite;
+    mix-blend-mode: screen;
+}
+
+/* content layers above the glow */
+.container-resume > * { position: relative; z-index: 1; }
+
+/* header */
+header{
     text-align: center;
     margin-bottom: 20px;
+    padding-top: 6px;
 }
 
-header h1 {
-    font-size: 2.5em;
+header h1{
+    font-size: 2.6rem;
+    margin: 0;
+    letter-spacing: -0.02em;
+    color: #eaffff;
+    text-shadow:
+        0 0 8px rgba(0,229,255,0.18),
+        0 0 20px rgba(122,0,255,0.08);
+    display: inline-block;
+    background-image: linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
+    padding: 6px 14px;
+    border-radius: 10px;
+    transition: transform 0.45s cubic-bezier(.2,.9,.2,1);
+}
+
+/* subtle hover float for the title (desktop) */
+@media (hover: hover) and (pointer: fine){
+    header h1:hover{ transform: translateY(-4px); }
+}
+
+/* subtitle */
+header p{
+    font-size: 1rem;
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* sections */
+section{
+    margin-bottom: 18px;
+    padding: 14px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+    border: 1px solid rgba(255,255,255,0.02);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 6px 20px rgba(3,6,10,0.5);
+}
+
+/* small floating animation to give life */
+section{ animation: float-slight 8s ease-in-out infinite; }
+
+section:hover{
+    transform: translateY(-6px) scale(1.003);
+    box-shadow: 0 30px 60px rgba(2,6,18,0.6), 0 0 30px rgba(0,229,255,0.04);
+}
+
+section h2{
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #dff9ff;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+/* animated neon underline for headings */
+section h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(.2,.9,.2,1);
+    box-shadow: 0 6px 18px rgba(0,229,255,0.08);
+    opacity: 0.95;
+}
+
+/* reveal underline on hover */
+@media (hover: hover) and (pointer: fine){
+    section:hover h2::after{ transform: scaleX(1); }
+}
+
+/* paragraph text */
+section p{
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #bcd8e6;
     margin: 0;
 }
 
-header p {
-    font-size: 1.2em;
-    color: #777;
-    margin-top: 5px;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-section p {
-    font-size: 1em;
-    line-height: 1.6;
-}
-
-.resume-download .btn {
+/* download button - neon gaming style */
+.resume-download .btn{
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #007BFF;
+    padding: 12px 22px;
+    font-size: 1rem;
+    color: #041018;
+    background: linear-gradient(90deg, var(--accent2), var(--accent1));
+    border-radius: 999px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow:
+        0 6px 30px rgba(0,0,0,0.6),
+        0 0 18px rgba(122,0,255,0.12),
+        inset 0 -3px 8px rgba(0,0,0,0.45);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
     text-align: center;
+    letter-spacing: 0.02em;
+    position: relative;
+    overflow: hidden;
 }
 
-.resume-download .btn:hover {
-    background-color: #0056b3;
-    
+/* gentle pulsing glow */
+.resume-download .btn::before{
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.06), transparent 20%),
+                            radial-gradient(circle at 90% 80%, rgba(122,0,255,0.05), transparent 25%);
+    mix-blend-mode: screen;
+    animation: btn-sheen 3.5s linear infinite;
+    pointer-events: none;
+}
+
+/* hover state */
+@media (hover: hover) and (pointer: fine){
+    .resume-download .btn:hover{
+        transform: translateY(-4px) scale(1.02);
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.6),
+            0 0 40px rgba(0,229,255,0.12),
+            inset 0 -4px 14px rgba(0,0,0,0.5);
+        filter: brightness(1.05);
+    }
+}
+
+/* accessible reduced motion */
+@media (prefers-reduced-motion: reduce){
+    .container-resume::before,
+    section,
+    .resume-download .btn::before{
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* keyframes */
+@keyframes neon-rotate{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+@keyframes float-slight{
+    0%{ transform: translateY(0); }
+    50%{ transform: translateY(-6px); }
+    100%{ transform: translateY(0); }
+}
+@keyframes btn-sheen{
+    0%{ transform: translateX(-10%); opacity: 0.9; }
+    50%{ transform: translateX(10%); opacity: 1; }
+    100%{ transform: translateX(-10%); opacity: 0.9; }
+}
+
+/* small screens tweak */
+@media (max-width: 600px){
+    .container-resume{ margin: 20px 16px; padding: 18px; }
+    header h1{ font-size: 1.8rem; }
+    section{ padding: 12px; }
+    .resume-download .btn{ padding: 10px 16px; font-size: 0.95rem; }
 }

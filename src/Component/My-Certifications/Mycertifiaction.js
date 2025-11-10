@@ -15,6 +15,11 @@ const MyCertifications = () => {
       link: 'https://www.hackerrank.com/certificates/d92141c4a7e8'
     },
     {
+      name: 'Kafka',
+      image: 'images/certification2.jpg',
+      link: 'https://www.linkedin.com/learning/certificates/ee7ce11055faece64588968c565444ac6aa3742492fb6afb3f59cccd86d120b9?accountId=2164202&u=2164202&success=true&authUUID=W3dsYB2RSCa5JAUzhZCPNA%3D%3D'
+    },
+    {
       name: 'Angular',
       image: '',
       link: 'https://www.hackerrank.com/certificates/f380050930eb'
@@ -39,7 +44,7 @@ const MyCertifications = () => {
   return (
     <>
       <div className="container-new">
-        <h1>My Certifications</h1>
+        <h1 className='cert-title'>My Certifications</h1>
         <div className="scrollable-container">
           <table className="certification-table">
             <thead>

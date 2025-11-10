@@ -1,33 +1,50 @@
+// /d:/Projects/React_Projects/my-website/src/Component/My-Skills/skills.js
 import './skills.css';
+
 const Skils = () => {
-    return ( 
-        <>
-        <body className='body-color'>
-        <header>
-    <h1 className='my-skill-heading'>My Technology Skills</h1>
-  </header>
-  <main>
-    <section className="technology-skills">
-      <ul>
-        <li>Angular</li>
-        <li>Java</li>
-        <li>Springboot</li>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>Microservices</li>
-        <li>React.js</li>
-        <li>SQL</li>
-        <li>Hibernate</li>
-        <li>Git & GitHub</li>
-        <li>PHP</li>
-        <li>Docker</li>
-        <li>Kafka</li>
-      </ul>
-    </section>
-  </main>
-  </body>
-        </>
-     );
-}
- 
+  const skills = [
+    { name: 'Angular', icon: '🅰️' },
+    { name: 'Java', icon: '☕️' },
+    { name: 'Spring Boot', icon: '🌿' },
+    { name: 'JavaScript', icon: '🟨' },
+    { name: 'TypeScript', icon: '🟦' },
+    { name: 'Microservices', icon: '🔧' },
+    { name: 'React.js', icon: '⚛️' },
+    { name: 'SQL', icon: '🗄️' },
+    { name: 'Hibernate', icon: '🐘' },
+    { name: 'Git & GitHub', icon: '🐱' },
+    { name: 'PHP', icon: '🐘' },
+    { name: 'Docker', icon: '🐳' },
+    { name: 'Kafka', icon: '☁️' }
+  ];
+
+  return (
+    <div className="skills-wrap">
+      <header className="skills-header">
+        <h1>My Technology Skills</h1>
+      </header>
+
+      <main>
+        <section className="technology-skills">
+          <ul>
+            {skills.map((s, i) => (
+              <li
+                key={s.name}
+                className="skill"
+                style={{ ['--i']: i }}
+                aria-label={s.name}
+              >
+                <span className="icon" aria-hidden>
+                  {s.icon}
+                </span>
+                <span className="label">{s.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
+    </div>
+  );
+};
+
 export default Skils;

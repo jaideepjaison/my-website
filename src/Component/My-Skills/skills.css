@@ -1,59 +1,93 @@
-.technology-skills {
-    text-align: center;
-  }
-  
-  .technology-skills h2 {
-    margin-bottom: 20px;
-  }
-  
-  .technology-skills ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .technology-skills li {
-    display: inline-block;
-    margin: 5px;
-    padding: 8px 16px;
-    border-radius: 20px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
-    outline: 1px solid #fff;
-  }
-  
-  /* Apply zoom-in effect on hover */
-  .technology-skills li:hover {
-    transform: scale(1.1); /* Zoom in on hover */
-  }
-  
-  /* Beautiful CSS animation in the background */
-  /* body {
-    overflow: hidden;
-  } */
-  
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  .body-color {
-    animation: gradientAnimation 10s infinite;
-    background: linear-gradient(to left, #b100f7, #ff0015);
-    background-size: 200% 200%;
-  }
-  h1{
-    text-align: center;
-  }
+/* Floating badges + improved color gradient */
 
-  .my-skill-heading{
-    color: white;
-  }
+/* Page background: smooth multi-color gradient that slowly moves */
+.body-color {
+  background: linear-gradient(120deg,
+    #ff9a9e 0%,
+    #fad0c4 20%,
+    #fbc2eb 40%,
+    #a18cd1 60%,
+    #667eea 80%);
+  background-size: 400% 400%;
+  animation: gradientAnimation 12s ease infinite;
+}
+
+.skills-header {
+  padding: 24px 12px 0;
+  height: 100px;
+  background-color: #333333;
+}
+
+/* gradient movement */
+@keyframes gradientAnimation {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container / heading tweaks */
+.technology-skills {
+  text-align: center;
+  padding: 24px 12px;
+}
+
+.technology-skills h2,
+.my-skill-heading,
+h1 {
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 18px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+/* Skill badges: floating animation, soft shadow, nice color */
+.technology-skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.technology-skills li {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 18px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+  color: #fff;
+  cursor: default;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: 0 8px 18px rgba(22, 28, 45, 0.18), inset 0 -2px 8px rgba(255,255,255,0.03);
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms;
+  transform-origin: center;
+  /* a default gentle float animation */
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+  outline: none;
+}
+
+/* Slightly staggered motion for variety */
+.technology-skills li:nth-child(3n) { animation-duration: 5.2s; }
+.technology-skills li:nth-child(3n+1) { animation-duration: 6.4s; animation-delay: -0.9s; }
+.technology-skills li:nth-child(3n+2) { animation-duration: 7s; animation-delay: -0.4s; }
+
+/* Floating keyframes: vertical motion + tiny rotation for natural feel */
+@keyframes float {
+  0%   { transform: translateY(0) rotate(0deg) scale(1); }
+  25%  { transform: translateY(-6px) rotate(-0.6deg) scale(1.01); }
+  50%  { transform: translateY(0)  rotate(0deg) scale(1); }
+  75%  { transform: translateY(6px)  rotate(0.6deg) scale(0.995); }
+  100% { transform: translateY(0)  rotate(0deg) scale(1); }
+}
+
+/* Hover: lift, brighten and slight pop */
+.technology-skills li:hover {
+  transform: translateY(-10px) scale(1.08) rotate(-0.4deg);
+  box-shadow: 0 18px 30px rgba(22, 28, 45, 0.28), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Optional: color themes for individual badges (pick the combination you like) */
+.technology-skills li.theme-1 { background: linear-gradient(135deg,#00c6ff,#0072ff); }
+.technology-skills li.theme-2 { background: linear-gradient(135deg,#7b2ff7,#f107a3); }
+.technology-skills li.theme-3 { background: linear-gradient(135deg,#00b09b,#96c93d); }
+.technology-skills li.theme-4 { background: linear-gradient(135deg,#ff9a9e,#fecfef); color: #222; }

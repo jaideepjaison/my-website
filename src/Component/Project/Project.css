@@ -1,87 +1,220 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  .projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    
-  }
-  
-  .project {
-    flex: 1 1 300px;
-    /*background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #a18cd1, #fbc2eb, #fad0c4, #ffd1ff); /* Gradient colors */
-    background:linear-gradient(to right, #2E3192, #29bbbb);
-    background-size: 400% 400%;
-    padding: 20px;
-    border-radius: 5px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    animation: sidemove 5s linear infinite;
-    transition: transform 0.3s ease;
-  }
-  
-  .project h2 {
-    margin-top: 0;
-
-  }
-  
-  .project a {
-    display: block;
-    margin-bottom: 10px;
-   
-  }
-   .project:hover{
-    transform: scale(1.1);
-   }
-  .project img {
-    width: 50%;
-    height: auto;
-    border-radius: 5px;
-    
-  }
-  
-  .rewards {
-    margin-top: 50px;
-  }
-  
-  .reward-images {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .reward-images img {
-    width: 200px;
-    border-radius: 5px;
-  }
-  .titleProject{
-    text-align: center;
-    color: white;
-    margin: 0px;
-    padding: 4px;
-  }
-  
-
-
-
-a{
-  font-size: 20px;
+:root{
+  --bg: #071226;
+  --card: rgba(200, 35, 35, 0.03);
+  --glass: rgba(255,255,255,0.04);
+  --accent-1: #7b61ff; /* purple */
+  --accent-2: #29d2c2; /* teal */
+  --muted: #94a3b8;
+  --text: #e6eef8;
+  --radius: 14px;
+  --gap: 20px;
+  --easing: cubic-bezier(.2,.9,.26,1);
+  --float-duration: 6s;
+}
+.header-project {
+  padding: 24px 12px 0;
+  color: white;
+  height: 100px;
+  background-color: #333333;
+}
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#061425 0%, #071b2b 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
 }
 
-h3,a{
-  color: white;
+/* Layout */
+header{
+  padding:20px 28px;
+  background:transparent;
+}
+main{
+  padding:36px;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+/* Projects grid — responsive */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:var(--gap);
+  align-items:start;
+  margin-top:12px;
+}
+
+/* Card */
+.project{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius);
+  padding:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 10px 30px rgba(2,6,23,0.55), inset 0 1px 0 rgba(255,255,255,0.02);
+  transition: transform .32s var(--easing), box-shadow .32s var(--easing), filter .32s var(--easing);
+  min-height:160px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  isolation:isolate;
+  background-blend-mode:overlay;
+  will-change: transform, box-shadow, filter;
+  transform: translateZ(0);
+  /* gentle floating animation */
+  animation: floatY var(--float-duration) var(--easing) infinite;
+  animation-delay: calc(var(--float-duration) * -0.2);
+}
+
+/* Animated gradient overlay — conic + radial blend for modern duotone */
+.project::before{
+  content:"";
+  position:absolute;
+  inset: -20% -10% -30% -10%;
+  z-index:0;
+  background:
+    conic-gradient(from 220deg at 10% 20%, rgba(123,97,255,0.16), rgba(41,210,194,0.12), rgba(123,97,255,0.10)),
+    radial-gradient(600px 300px at 80% 10%, rgba(41,210,194,0.06), transparent 30%),
+    radial-gradient(400px 200px at 10% 90%, rgba(123,97,255,0.06), transparent 30%);
+  mix-blend-mode: screen;
+  filter: blur(36px) saturate(1.05);
+  transform: translateZ(0);
+  pointer-events:none;
+  opacity:0.9;
+}
+
+/* Subtle glossy highlight */
+.project::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+  pointer-events:none;
+  mix-blend-mode: overlay;
+}
+
+/* Keep content above overlays */
+.project > *{position:relative; z-index:1}
+
+/* Hover / focus styles — pause float and lift */
+.project:hover,
+.project:focus-within{
+  animation-play-state:paused;
+  transform:translateY(-12px) scale(1.03);
+  box-shadow: 0 28px 60px rgba(2,6,23,0.72);
+  filter: saturate(1.03) drop-shadow(0 8px 30px rgba(46,49,146,0.08));
+}
+
+/* Title & text */
+.titleProject{
+  margin:0;
+  color:var(--text);
+  font-weight:700;
+  font-size:1.125rem;
+  text-align:center;
+  letter-spacing:0.2px;
+}
+
+/* Image */
+.project img{
+  width:100%;
+  height:auto;
+  max-height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.48);
+}
+
+/* Links styled as subtle buttons */
+.project a{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  padding:8px 12px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color:var(--text);
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:600;
+  font-size:.95rem;
+  border:1px solid rgba(255,255,255,0.04);
+  transition: transform .18s var(--easing), background .18s var(--easing), box-shadow .18s var(--easing);
+}
+
+/* Accent CTA */
+.project a.cta{
+  background:linear-gradient(90deg, var(--accent-2), var(--accent-1));
+  color:#fff;
+  box-shadow: 0 10px 30px rgba(123,97,255,0.12);
+  border:0;
+}
+
+/* Link hover/focus */
+.project a:hover,
+.project a:focus{
+  transform:translateY(-3px);
+  text-decoration:none;
+  outline:none;
+}
+
+/* Accessibility focus ring */
+.project a:focus-visible{
+  box-shadow:0 0 0 4px rgba(41,210,194,0.14), 0 8px 20px rgba(0,0,0,0.45);
+}
+
+/* Rewards area */
+.rewards{
+  margin-top:40px;
+}
+.reward-images{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:16px;
+}
+.reward-images img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.45);
+}
+
+/* Typography helpers */
+h3{ color:var(--text); margin:0 0 8px 0 }
+a{ font-size:16px; color:var(--text) }
+h3,a{ color:var(--text) }
+
+/* Floating keyframes */
+@keyframes floatY{
+  0%{ transform: translateY(0) }
+  50%{ transform: translateY(-6px) }
+  100%{ transform: translateY(0) }
+}
+
+/* Gradient subtle motion for users who allow animation */
+@keyframes gradientDrift{
+  0%{ transform: rotate(0deg) scale(1) }
+  50%{ transform: rotate(2deg) scale(1.02) }
+  100%{ transform: rotate(0deg) scale(1) }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce){
+  .project, .project::before, .project a, .reward-images img{
+    animation:none !important;
+    transition:none !important;
+  }
+  .project:hover,
+  .project:focus-within{
+    transform:none;
+    box-shadow: 0 12px 28px rgba(2,6,23,0.6);
+  }
 }

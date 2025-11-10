@@ -1,5 +1,5 @@
 import './Footer.css';
-import jllogo from './PhotoJL.png';
+import jllogo from '../Component/Jaisons_Photo/Jaison_Photo_2025.jpeg';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -21,7 +21,7 @@ const Footer = () => {
                         <div className="footer-logos">
                             <Link to="/">
                                 <img
-                                    style={{ borderRadius: '50%' }}
+                                    style={{ borderRadius: '50%', width: '50px', height: '60px' }}
                                     src={jllogo}
                                     className="spotify-logo"
                                 />

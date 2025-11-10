@@ -18,7 +18,7 @@ body, html {
     height: 100%;
     background-image: url('SDE_BG2.jpg');
     background-size: cover;
-    filter: brightness(0.5); /* Adjust the brightness of the background image */
+    filter: brightness(0.2); /* Adjust the brightness of the background image */
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -38,13 +38,44 @@ body, html {
   }
   
   .profile-photo {
-    width: 200px; /* Adjust the size of the profile photo */
-    border-radius: 50%; /* Make the profile photo circular */
-    transition: transform 0.3s ease;
-   
+    position: relative;
+    width: 210px;
+    height: 230px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ddd; /* fallback while image loads */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* subtle base shadow */
+    z-index: 1;
   }
-  .profile-photo:hover {
-    transform: scale(1.1);
+
+  /* image stays contained */
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* hover / focus give a stronger, colored outline (ring) + slight scale */
+  .profile-photo:hover,
+  .profile-photo:focus,
+  .profile-photo:focus-visible {
+    transform: scale(1.05);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.35),
+      0 0 0 6px rgba(59, 130, 246, 0.18); /* blue ring */
+    outline: none;
+  }
+
+  /* optional active state for click */
+  .profile-photo:active {
+    transform: scale(1.02);
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, 0.3),
+      0 0 0 6px rgba(59, 130, 246, 0.14);
   }
   .name {
     font-size: 30px;
