@@ -12,8 +12,8 @@ const MyResume = () => {
         <section class="about">
             <h2>About Me</h2>
             <p>
-                I am a passionate Full Stack developer with experience in creating dynamic and responsive web applications.
-                I specialize in front-end development with skills in Java, Spring boot, Angular, MySql, JavaScript, and various frameworks.
+                I am a passionate Full Stack developer with 4 years of experience in creating dynamic and responsive web applications.
+                I specialize in front-end development with skills in Java, Spring boot, React Angular, MySql, JavaScript, and various frameworks.
             </p>
         </section>
 
