@@ -107,12 +107,12 @@ footer {
 }
 
 .hidden-phone-icon {
-  opacity: 0.2;
+  opacity: 0;
   transition: var(--transition-smooth);
 }
 
 .hidden-phone-icon:hover {
-  opacity: 0.8;
+  opacity: 1;
   color: var(--accent-cyan);
 }
 

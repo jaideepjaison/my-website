@@ -99,13 +99,9 @@ const Footer = () => {
                     </p>
                     <div className="created-by">
                         <span>Created by Jaison Lobo</span>
-                        <Link to="/phone" className="hidden-phone-icon" aria-label="Phone Numbers">
+                        <Link to="/phone" aria-label="Phone Numbers" className="hidden-phone-icon">
                             <i
                                 className="fas fa-phone"
-                                style={{
-                                    fontSize: '0.9rem',
-                                    cursor: 'pointer',
-                                }}
                             ></i>
                         </Link>
                     </div>
