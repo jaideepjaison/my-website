@@ -1,29 +1,45 @@
-import './my-res.css'
-import resume from './Jaison_Jaideep_Lobo_Resume.pdf';
+import './my-res.css';
+import resumePdf from './Jaison_Jaideep_Lobo_Resume.pdf';
+
 const MyResume = () => {
-    return (  
-        <>
-            <div class="container-resume">
-        <header>
-            <h2>Jaison Jaideep Lobo</h2>
-            <p>Full Stack Developer</p>
-        </header>
-
-        <section class="about">
-            <h2>About Me</h2>
+  return (
+    <>
+      <div className="resume-page-wrap">
+        <div className="resume-container-custom glass-card">
+          <header className="resume-header">
+            <h1>My Resume</h1>
+          </header>
+          <main className="resume-bio-card">
             <p>
-                I am a passionate Full Stack developer with 4 years of experience in creating dynamic and responsive web applications.
-                I specialize in front-end development with skills in Java, Spring boot, React Angular, MySql, JavaScript, and various frameworks.
+              Hello, my name is <strong>Jaison Lobo</strong>. I am currently working as a 
+              Software Engineer at Best Buy, specializing in building high-performance 
+              Full Stack applications.
             </p>
-        </section>
+            <p>
+              With 4 years of professional software engineering and freelancing experience, 
+              I have engineered reliable solutions across a diverse suite of technologies, 
+              including JavaScript, React, Angular, Bootstrap, Java, Spring Boot, Microservices, 
+              Apache Kafka, SQL, and Git.
+            </p>
+            <div className="resume-highlights">
+              <span className="resume-highlight-badge">4+ Years Exp</span>
+              <span className="resume-highlight-badge">Full Stack</span>
+              <span className="resume-highlight-badge">Java & React Specialist</span>
+            </div>
+            <div className="resume-action-area">
+              <a
+                className="resume-dl-btn"
+                href={resumePdf}
+                download="Jaison_Jaideep_Lobo_Resume.pdf"
+              >
+                Download Resume <i className="fas fa-file-download"></i>
+              </a>
+            </div>
+          </main>
+        </div>
+      </div>
+    </>
+  );
+};
 
-        <section class="resume-download">
-            <h2>Download My Resume</h2>
-            <a href={resume} download="Jaison_Jaideep_Lobo_Resume.pdf" class="btn">Download Resume</a>
-        </section>
-    </div>
-        </>
-    );
-}
- 
 export default MyResume;

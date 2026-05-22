@@ -15,7 +15,8 @@ const Skils = () => {
     { name: 'Git & GitHub', icon: '🐱' },
     { name: 'PHP', icon: '🐘' },
     { name: 'Docker', icon: '🐳' },
-    { name: 'Kafka', icon: '☁️' }
+    { name: 'Kafka', icon: '☁️' },
+    { name: 'AWS Technical Essentials', icon: '☁️' }
   ];
 
   return (
@@ -31,7 +32,7 @@ const Skils = () => {
               <li
                 key={s.name}
                 className="skill"
-                style={{ ['--i']: i }}
+                style={{ '--i': i }}
                 aria-label={s.name}
               >
                 <span className="icon" aria-hidden>

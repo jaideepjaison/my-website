@@ -1,133 +1,195 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
+.portfolio {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08), transparent 70%),
+              radial-gradient(circle at 10% 10%, rgba(6, 182, 212, 0.05), transparent 50%);
+  padding: 60px 20px;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('SDE_BG2.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.35) saturate(1);
+  z-index: 0;
+  animation: slowZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.profile-container {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  margin-bottom: 8px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), var(--glow-indigo);
+  transition: var(--transition-smooth);
+  animation: breathe 6s infinite ease-in-out;
+}
+
+.profile-container::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-cyan));
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(8px);
+  animation: pulseBlur 6s infinite ease-in-out;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); border-color: rgba(255, 255, 255, 0.08); }
+  50% { transform: scale(1.03); border-color: rgba(99, 102, 241, 0.4); }
+}
+
+@keyframes pulseBlur {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.08); opacity: 0.5; }
+}
+
+.name-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--text-primary) 40%, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.desig {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: var(--glow-cyan);
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Call to Action buttons inside Hero */
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.btn-primary-custom {
+  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-blue));
+  color: var(--text-primary);
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm), 0 4px 15px rgba(99, 102, 241, 0.3);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), var(--glow-indigo);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-secondary-custom {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--border-glass);
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary-custom:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-glass-hover);
+  transform: translateY(-2px);
+  color: var(--text-primary);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 768px) {
   .portfolio {
-    position: relative;
-    height: 80vh;
-    overflow: hidden;
-  }
-  
-  .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('SDE_BG2.jpg');
-    background-size: cover;
-    filter: brightness(0.2); /* Adjust the brightness of the background image */
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    animation: zoomInOut 10s infinite alternate ease-in-out;
-    
-  }
-  
-  .content {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    bottom: 35%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    z-index: 1;
-  }
-  
-  .profile-photo {
-    position: relative;
-    width: 200px;
-    height: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: inline-block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #ddd; /* fallback while image loads */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* subtle base shadow */
-    z-index: 1;
-  }
-
-  /* image stays contained */
-  .profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  /* hover / focus give a stronger, colored outline (ring) + slight scale */
-  .profile-photo:hover,
-  .profile-photo:focus,
-  .profile-photo:focus-visible {
-    transform: scale(1.05);
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.35),
-      0 0 0 6px rgba(59, 130, 246, 0.18); /* blue ring */
-    outline: none;
-  }
-
-  /* optional active state for click */
-  .profile-photo:active {
-    transform: scale(1.02);
-    box-shadow:
-      0 6px 18px rgba(0, 0, 0, 0.3),
-      0 0 0 6px rgba(59, 130, 246, 0.14);
+    min-height: auto;
+    padding: 80px 16px 60px;
   }
   .name {
-    font-size: 30px;
-    animation: typing 4s steps(30) infinite;
-    filter: brightness(5); 
-    font-weight: bold;
-    overflow: hidden;
-    white-space: nowrap;
-    
+    font-size: 2.3rem;
   }
-  
+  .desig {
+    font-size: 1.2rem;
+  }
   .description {
-    max-width: 1000px;
-    margin: 0 auto;
-    font-style: italic;
-    
+    font-size: 0.95rem;
   }
-  
-  @keyframes zoomInOut {
-    0% {
-      transform: scale(1); /* Initial scale */
-    }
-    50% {
-      transform: scale(1.1); /* Zoom in to 110% */
-    }
-    100% {
-      transform: scale(1); /* Return to original scale */
-    }
-}
-
-.desig{
-    font-size: 23px;
-    width: auto;
+  .profile-container {
+    width: 150px;
+    height: 150px;
+  }
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .btn-primary-custom, .btn-secondary-custom {
     text-align: center;
-    white-space: nowrap;
-    margin: 20px 0;
+    width: 100%;
+  }
 }
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-
-  .cursor {
-    display: inline-block;
-    width: 0;
-    animation: blink 4s;
-  }
-
-  @keyframes blink {
-    50% { border-color: transparent; }
-  }
-
-
- 

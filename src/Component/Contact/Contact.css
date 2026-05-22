@@ -1,96 +1,168 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  
-  
-  .header-conatct {
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  
-  .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../SDE_BG2.jpg'); /* Replace 'background-image.jpg' with your background image */
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.7); /* Adjust brightness as needed */
-    z-index: -1; /* Behind other content */
-  }
+.contact-page-wrap {
+  padding: 60px 20px;
+  background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05), transparent 60%);
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .main-conatct {
-    position: relative;
-    height: calc(100% - 5px); /* Subtract header height */
-    z-index: -1;
-  }
-  
-  .content-contact {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  
-  .profile-photo-conatct {
-    width: 210px;
-    height: 230px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
-  
-  .contact-info {
-    text-align: center;
-    color: #ffffff;
-  }
-  
-  .contact-info a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .social-links-conatct a{
-    color: white;
-    margin-left: 10px;
-    font-size: 20px; /* Adjust the font size of icons */
-    /* Or */
-    width: 20px; /* Adjust the width of icons */
-    height: 20px; /* Adjust the height of icons */
-  }
+.contact-container-custom {
+  max-width: 800px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  padding: 40px;
+}
 
-  h5{
-    color: #fff;
-  }
-  .dev_contact{
-    color: white;
-  }
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-  .background_img{
+.contact-info-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
 
-    background-image: url('../SDE_BG2.jpg'); /* Replace 'background-image.jpg' with your background image */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: brightness(0.7); /* Adjust brightness as needed */
-    z-index: -1; /* Behind other content */
-    background-size: cover;
-    background-position: center;
-  }
+.contact-info-header p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  margin: 0;
+  line-height: 1.6;
+}
 
-  .contact-msg{
-    color: white;
-    text-align: center;
-    margin: 20px 0;
-    font-weight: bold;
-    font-style: italic;
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-details-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-details-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.contact-details-value {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a.contact-details-value:hover {
+  color: var(--accent-cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+.contact-form-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form-group label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.contact-form-input {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 12px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.contact-form-input:focus {
+  border-color: var(--accent-indigo);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+.contact-submit-btn {
+  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-blue));
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm), 0 4px 12px rgba(99, 102, 241, 0.2);
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.contact-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), var(--glow-indigo);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 768px) {
+  .contact-page-wrap {
+    padding: 40px 16px;
   }
+  .contact-container-custom {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 24px;
+  }
+  .contact-info-header h2 {
+    font-size: 1.8rem;
+  }
+}

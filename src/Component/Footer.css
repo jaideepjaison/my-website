@@ -1,69 +1,130 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Reset CSS */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      z-index: 1;
-    }
-    /* Spotify theme */
-    .footer-body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
-    footer {
-      background-color: #000000;
-      padding: 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 600px;
-      margin-bottom: 20px;
-    }
-    .footer-logos img {
-      width: 30px;
-      margin-right: 10px;
-    }
-    .footer-logos img.spotify-logo {
-      width: 50px;
-    }
-    .social-links {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-    .social-links a {
-      margin-left: 10px;
-      font-size: 20px; /* Adjust the font size of icons */
-      /* Or */
-      width: 20px; /* Adjust the width of icons */
-      height: 20px; /* Adjust the height of icons */
-      color: chartreuse;
-    }
-    .created-by {
-      font-size: 14px;
-      opacity: 0.7;
-    }
-    .navbar-nav .nav-link {
-        font-weight: normal;
-        color: #ffffff;
-        text-decoration: none;
-        text-align: justify;
-        transition: 0.15s ease-in-out;
-      }
-      
-      .navbar-nav .nav-link:hover {
-        font-weight: bold;
-        color: #fff;
-        text-decoration: underline;
-       
-      }
-      
+footer {
+  background-color: #030408;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 24px;
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logos img.spotify-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.footer-logos img.spotify-logo:hover {
+  transform: scale(1.08);
+  border-color: var(--accent-cyan);
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.social-links a {
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+}
+
+.social-links a:hover {
+  color: var(--text-primary);
+  background: rgba(99, 102, 241, 0.15);
+  border-color: var(--accent-indigo);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-sans);
+  color: var(--text-secondary);
+}
+
+.footer-info p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-info a.mail-link {
+  text-decoration: none;
+  color: var(--accent-cyan) !important;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.footer-info a.mail-link:hover {
+  text-shadow: var(--glow-cyan);
+  opacity: 0.9;
+}
+
+.created-by {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.hidden-phone-icon {
+  opacity: 0.2;
+  transition: var(--transition-smooth);
+}
+
+.hidden-phone-icon:hover {
+  opacity: 0.8;
+  color: var(--accent-cyan);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}

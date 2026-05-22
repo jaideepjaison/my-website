@@ -3,15 +3,22 @@ import './my-cource.css';
 
 const Card = ({ image, title, buttonLink, buttonText }) => {
   return (
-    <div className="card">
-      <img src={image} alt={title} />
-      <div className="card-content">
-        <h2 className="card-title">{title}</h2>
-        <a href={buttonLink} target="_blank" rel="noopener noreferrer" className="card-button">
-          {buttonText}
+    <article className="course-card-custom">
+      <div className="course-img-container">
+        <img src={image} alt={title} loading="lazy" />
+      </div>
+      <div className="course-info">
+        <h3 className="course-title-custom">{title}</h3>
+        <a
+          href={buttonLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="course-btn-custom"
+        >
+          {buttonText} <i className="fas fa-external-link-alt" style={{ fontSize: '0.8rem' }}></i>
         </a>
       </div>
-    </div>
+    </article>
   );
 };
 

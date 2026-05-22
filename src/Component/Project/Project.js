@@ -3,42 +3,76 @@ import ND from './ND_image.png';
 import st_roque from './st_logo.png';
 import aiet from './Aiet-College.jpg';
 import best_buy from './Best_Buy.jpg';
+
 const Project = () => {
-    return ( 
-        <>
-        <header className='header-project'>
-    <h1>My Projects</h1>
-    </header>
-    <section className="projects">
-      <div class="project">
-        <h3>Project 1 - Nov 2024 - Present</h3>
-        <a className='a-link' href="https://www.bestbuy.com/">Best Buy - Worksite App</a>
-        <img src={best_buy} alt="Project 1 Image" />
-      </div>
-      <div class="project">
-        <h3>Project 2 - July 2022- Oct 2024</h3>
-        <a className='a-link' href="https://mmis.nd.gov/portals/wps/portal/EnterpriseHome">ND MMIS</a>
-        <img src={ND} alt="Project 1 Image" />
-      </div>
+  const projectList = [
+    {
+      title: "Best Buy - Worksite App",
+      duration: "Nov 2024 - Present",
+      link: "https://www.bestbuy.com/",
+      image: best_buy,
+      description: "An enterprise-grade internal worksite application optimized for operations and team collaboration across stores.",
+      tech: ["React.js", "TypeScript", "Microservices", "Bootstrap", "Git"]
+    },
+    {
+      title: "North Dakota MMIS",
+      duration: "July 2022 - Oct 2024",
+      link: "https://mmis.nd.gov/portals/wps/portal/EnterpriseHome",
+      image: ND,
+      description: "A highly secure and robust Medicaid Management Information System designed for healthcare portal operations.",
+      tech: ["Angular", "Java", "Spring Boot", "SQL", "Hibernate"]
+    },
+    {
+      title: "Neerude Church Portal",
+      duration: "Dec 2023 - March 2024",
+      link: "https://www.neerudechurch.in",
+      image: st_roque,
+      description: "A customized content management platform built to keep the local community connected with parish announcements.",
+      tech: ["PHP", "JavaScript", "HTML5", "Vanilla CSS", "MySQL"]
+    },
+    {
+      title: "AIET College ERP",
+      duration: "Dec 2021 - June 2022",
+      link: "https://saw-erp.in",
+      image: aiet,
+      description: "A comprehensive institutional resource planning (ERP) system tracking grading, schedules, and student lifecycle details.",
+      tech: ["Java", "SQL", "Hibernate", "Vanilla JS", "Git"]
+    }
+  ];
 
-      <div className="project">
-        <h3>Project 3 - Dec 2023 - March 2024</h3>
-        <a href="https://www.neerudechurch.in">Neerude Church</a>
-        <img className='a-link' src={st_roque} alt="Project 2 Image" />
+  return (
+    <>
+      <div className="projects-page-wrap">
+        <header className="header-project-custom">
+          <h1>My Selected Work</h1>
+        </header>
+        <main className="projects-main">
+          <section className="projects-grid-custom">
+            {projectList.map((proj, idx) => (
+              <article className="project-card-custom" key={idx}>
+                <div className="project-img-container">
+                  <img src={proj.image} alt={proj.title} />
+                  <span className="project-duration">{proj.duration}</span>
+                </div>
+                <div className="project-info-custom">
+                  <h3 className="project-title-custom">{proj.title}</h3>
+                  <p className="project-description-custom">{proj.description}</p>
+                  <div className="project-tech-cloud">
+                    {proj.tech.map((t, i) => (
+                      <span className="project-tech-pill" key={i}>{t}</span>
+                    ))}
+                  </div>
+                  <a href={proj.link} className="project-link-btn" target="_blank" rel="noopener noreferrer">
+                    Visit Work <i className="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </section>
+        </main>
       </div>
+    </>
+  );
+};
 
-      <div className="project">
-        <h3>Project 4 - Dec 2021 - June 2022</h3>
-        <a href="https://saw-erp.in">AIET College ERP</a>
-        <img className='a-link' src={aiet} alt="Project  Image" />
-      </div>
-
-      
-    </section>
-
-   
-        </>
-     );
-}
- 
 export default Project;
