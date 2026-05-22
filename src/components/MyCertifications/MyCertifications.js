@@ -1,4 +1,4 @@
-import './certificcate.css';
+import './MyCertifications.css';
 
 const MyCertifications = () => {
   const certifications = [

@@ -1,14 +1,14 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
-import Home from './Home';
-import Header from './Component/Header';
-import Footer from './Component/Footer';
-import Project from './Component/Project/Project';
-import Conatct from './Component/Contact/Contact';
-import MyCourses from './Component/My-Cources/my_cource';
-import MyResume from './Component/My-Resume/my-resume';
-import PhoneNumbers from './Component/PhoneNumber/PhoneNumber';
+import Home from './pages/Home/Home';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Project from './components/Projects/Projects';
+import Conatct from './components/Contact/Contact';
+import MyCourses from './components/MyCourses/MyCourses';
+import MyResume from './components/MyResume/MyResume';
+import PhoneNumbers from './components/PhoneNumber/PhoneNumber';
 function App() {
   return (
     <>

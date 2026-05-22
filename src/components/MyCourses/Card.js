@@ -1,5 +1,5 @@
 import React from 'react';
-import './my-cource.css';
+import './MyCourses.css';
 
 const Card = ({ image, title, buttonLink, buttonText }) => {
   return (

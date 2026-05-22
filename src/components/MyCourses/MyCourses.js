@@ -1,5 +1,5 @@
-import './my-cource.css';
-import img1 from './img1.png';
+import './MyCourses.css';
+import img1 from '../../assets/images/courses/img1.png';
 import Card from './Card';
 
 const My_cources = () => {

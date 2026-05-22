@@ -1,7 +1,7 @@
 import React from "react";
 import './Experience.css';
-import best_buy from '../Project/Best_Buy.jpg';
-import ics from '../Project/ics.jpg';
+import best_buy from '../../assets/images/projects/Best_Buy.jpg';
+import ics from '../../assets/images/projects/ics.jpg';
 
 const EXPERIENCE_DATA = [
     {

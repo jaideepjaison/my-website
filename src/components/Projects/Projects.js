@@ -1,8 +1,8 @@
-import './Project.css';
-import ND from './ND_image.png';
-import st_roque from './st_logo.png';
-import aiet from './Aiet-College.jpg';
-import best_buy from './Best_Buy.jpg';
+import './Projects.css';
+import ND from '../../assets/images/projects/ND_image.png';
+import st_roque from '../../assets/images/projects/st_logo.png';
+import aiet from '../../assets/images/projects/Aiet-College.jpg';
+import best_buy from '../../assets/images/projects/Best_Buy.jpg';
 
 const Project = () => {
   const projectList = [

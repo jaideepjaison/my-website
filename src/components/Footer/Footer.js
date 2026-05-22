@@ -1,5 +1,5 @@
 import './Footer.css';
-import jllogo from '../Component/Jaisons_Photo/Jaison_Photo_2026.jpeg';
+import jllogo from '../../assets/images/profile/Jaison_Photo_2026.jpeg';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

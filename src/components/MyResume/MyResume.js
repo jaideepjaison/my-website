@@ -1,5 +1,5 @@
-import './my-res.css';
-import resumePdf from './Jaison_Jaideep_Lobo_Resume.pdf';
+import './MyResume.css';
+import resumePdf from '../../assets/documents/Jaison_Jaideep_Lobo_Resume.pdf';
 
 const MyResume = () => {
   return (

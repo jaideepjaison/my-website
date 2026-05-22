@@ -1,5 +1,5 @@
 // /d:/Projects/React_Projects/my-website/src/Component/My-Skills/skills.js
-import './skills.css';
+import './MySkills.css';
 
 const Skils = () => {
   const skills = [
