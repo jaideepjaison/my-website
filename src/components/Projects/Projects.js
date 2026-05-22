@@ -25,7 +25,7 @@ const Project = () => {
     {
       title: "Neerude Church Portal",
       duration: "Dec 2023 - March 2024",
-      link: "https://www.neerudechurch.in",
+      link: "https://www.neerude.com",
       image: st_roque,
       description: "A customized content management platform built to keep the local community connected with parish announcements.",
       tech: ["PHP", "JavaScript", "HTML5", "Vanilla CSS", "MySQL"]
@@ -33,7 +33,7 @@ const Project = () => {
     {
       title: "AIET College ERP",
       duration: "Dec 2021 - June 2022",
-      link: "https://saw-erp.in",
+      link: "https://www.aiet.org.in",
       image: aiet,
       description: "A comprehensive institutional resource planning (ERP) system tracking grading, schedules, and student lifecycle details.",
       tech: ["Java", "SQL", "Hibernate", "Vanilla JS", "Git"]
