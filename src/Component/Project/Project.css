@@ -69,12 +69,13 @@
   height: 200px;
   overflow: hidden;
   border-bottom: 1px solid var(--border-glass);
+  background: #fff; /* Ensure logos are visible on white background */
 }
 
 .project-img-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Don't crop logos */
   object-position: center;
   transition: var(--transition-smooth);
 }

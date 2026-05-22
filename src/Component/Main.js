@@ -1,12 +1,37 @@
+import React, { useState, useCallback } from 'react';
 import './Main.css';
 import jllogo from '../Component/Jaisons_Photo/Jaison_Photo_2026.jpeg';
 import { Link } from 'react-router-dom';
 
 const Main = () => {
+  const [ripples, setRipples] = useState([]);
+
+  const addRipple = useCallback((e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newRipple = { x, y, id: Date.now() };
+    
+    setRipples((prev) => [...prev, newRipple]);
+    
+    // Remove ripple after 1 second
+    setTimeout(() => {
+      setRipples((prev) => prev.filter(r => r.id !== newRipple.id));
+    }, 1000);
+  }, []);
+
   return (
     <>
-      <div className="portfolio">
+      <div className="portfolio" onPointerDown={addRipple}>
         <div className="background-image"></div>
+        {ripples.map((ripple) => (
+          <span
+            key={ripple.id}
+            className="water-ripple"
+            style={{ left: ripple.x, top: ripple.y }}
+          ></span>
+        ))}
         <div className="content">
           <div className="profile-container">
             <img src={jllogo} alt="Jaison Lobo Profile" className="profile-photo" />
