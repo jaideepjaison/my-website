@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './PhoneNumber.css'; // Import custom styles instead of bootstrap
 
 const PhoneNumbers = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
 
-  const handlePasswordSubmit = () => {
+  const handlePasswordSubmit = (e) => {
+    e?.preventDefault(); // Prevent default form submission if wrapped in a form
     if (password === '3666') { // Replace '3666' with your desired password
       setIsAuthenticated(true);
+      setError(false);
     } else {
-      alert('Incorrect password!');
+      setError(true);
     }
   };
 
-  const PhoneNumbers = [
+  const phoneNumbersList = [
     { id: 1, firstName: 'Jaison', phoneNumber: '7624851480' },
     { id: 2, firstName: 'Mummy', phoneNumber: '9945482712' },
     { id: 3, firstName: 'Jasmine', phoneNumber: '9611389276' },
@@ -23,70 +26,60 @@ const PhoneNumbers = () => {
     { id: 7, firstName: 'Raghav PG', phoneNumber: '93900046417' },
     { id: 8, firstName: 'Prajwal', phoneNumber: '7899455674' },
     { id: 9, firstName: 'Utkarsh', phoneNumber: '9453100401' },
-    {id:10,firstName:'Vaishno Pg Owner',phoneNumber:'9986053444'}
+    { id: 10, firstName: 'Vaishno Pg Owner', phoneNumber: '9986053444' }
   ];
 
   return (
-    <>
-      {!isAuthenticated && (
-        <div
-          className="modal show d-flex justify-content-center align-items-center"
-          tabIndex="-1"
-          role="dialog"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
-        >
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Enter Password</h5>
-              </div>
-              <div className="modal-body">
-                <input
-                  type="password"
-                  className="form-control"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter password"
-                />
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={handlePasswordSubmit}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
+    <div className="phonenumber-wrapper">
+      {!isAuthenticated ? (
+        <div className="custom-modal-backdrop">
+          <div className="custom-modal-content">
+            <h3>Secure Access</h3>
+            <form onSubmit={handlePasswordSubmit}>
+              <input
+                type="password"
+                className={`custom-input ${error ? 'input-error' : ''}`}
+                value={password}
+                onChange={(e) => { setPassword(e.target.value); setError(false); }}
+                placeholder="Enter passcode"
+                autoFocus
+              />
+              {error && <p className="error-text">Incorrect password, try again.</p>}
+              <button
+                type="submit"
+                className="custom-btn"
+              >
+                Unlock
+              </button>
+            </form>
+          </div>
+        </div>
+      ) : (
+        <div className="data-container">
+          <h2>Contact Directory</h2>
+          <div className="table-responsive">
+            <table className="custom-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Phone Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                {phoneNumbersList.map((person) => (
+                  <tr key={person.id}>
+                    <td data-label="#">{person.id}</td>
+                    <td data-label="Name">{person.firstName}</td>
+                    <td data-label="Phone Number" className="phone-text">{person.phoneNumber}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       )}
-
-      {isAuthenticated && (
-        <div className="container-new">
-          <h2>Phone Number Details</h2>
-          <table className="table table-striped table-dark">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Phone Number</th>
-              </tr>
-            </thead>
-            <tbody>
-              {PhoneNumbers.map((person) => (
-                <tr key={person.id}>
-                  <th scope="row">{person.id}</th>
-                  <td>{person.firstName}</td>
-                  <td>{person.phoneNumber}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-    </>
+    </div>
   );
 };
 
