@@ -20,7 +20,7 @@
   background-size: cover;
   background-position: center;
   filter: brightness(0.35) saturate(1);
-  z-index: 0;
+  z-index: -1;
   animation: slowZoom 20s infinite alternate ease-in-out;
 }
 
@@ -54,8 +54,8 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
-  border: 3px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), var(--glow-indigo);
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(195, 230, 255, 0.3);
   transition: var(--transition-smooth);
   animation: breathe 6s infinite ease-in-out;
 }
@@ -73,8 +73,8 @@
 }
 
 @keyframes breathe {
-  0%, 100% { transform: scale(1); border-color: rgba(255, 255, 255, 0.08); }
-  50% { transform: scale(1.03); border-color: rgba(99, 102, 241, 0.4); }
+  0%, 100% { transform: scale(1); border-color: rgba(255, 255, 255, 0.15); }
+  50% { transform: scale(1.03); border-color: rgba(195, 230, 255, 0.5); }
 }
 
 @keyframes pulseBlur {
@@ -94,11 +94,12 @@
   font-size: 3.2rem;
   font-weight: 900;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--text-primary) 40%, #a5b4fc);
+  background: linear-gradient(135deg, #ffffff 40%, #c7d2fe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
   line-height: 1.1;
+  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.2)) drop-shadow(0 0 20px rgba(6, 182, 212, 0.25));
 }
 
 .desig {
@@ -109,15 +110,16 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin: 0;
-  text-shadow: var(--glow-cyan);
+  text-shadow: 0 0 15px rgba(6, 182, 212, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
 .description {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: #cbd5e1;
   max-width: 640px;
   margin: 0 auto;
   line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* Call to Action buttons inside Hero */
