@@ -3,6 +3,10 @@ import './MySkills.css';
 
 const Skils = () => {
   const skills = [
+    { name: 'Claude', icon: '🧠' },
+    { name: 'GitHub Copilot', icon: '🤖' },
+    { name: 'Google Gemini', icon: '✨' },
+    { name: 'OpenAI GPT', icon: '🚀' },
     { name: 'Angular', icon: '🅰️' },
     { name: 'Java', icon: '☕️' },
     { name: 'Spring Boot', icon: '🌿' },

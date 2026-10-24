@@ -38,10 +38,10 @@ const Main = () => {
           </div>
           <div className="name-wrapper">
             <h1 className="name">Jaison Lobo</h1>
-            <h6 className="desig">Software Engineer</h6>
+            <h6 className="desig">Senior Software Engineer</h6>
           </div>
           <p className="description">
-            I am a passionate software engineer with 4 years of experience in Full Stack web development and freelancing, dedicated to writing clean, optimized code and building highly premium web experiences.
+            I’m a passionate software engineer with nearly 5 years of experience in full-stack web development and freelancing, dedicated to writing clean, optimized code and creating premium digital experiences. I have hands-on experience developing agentic AI workflows that orchestrate multi-step tasks, automate order-routing variations, and reduce manual intervention.
           </p>
           <div className="hero-cta">
             <Link to="/projects" className="btn-primary-custom">
